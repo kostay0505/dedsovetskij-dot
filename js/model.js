@@ -1,6 +1,6 @@
 // Страница модели: вьювер, панель карт, режимы, фон.
-import { Viewer, MODE_NAMES } from './viewer.js?v=mvf5v8f3';
-import { wireDownloads } from './auth.js?v=mvf5v8f3';
+import { Viewer, MODE_NAMES } from './viewer.js?v=mvf765ag';
+import { wireDownloads } from './auth.js?v=mvf765ag';
 wireDownloads(document.getElementById('dl'), document.getElementById('authNote'));
 
 const data = JSON.parse(document.getElementById('model-data').textContent);

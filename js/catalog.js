@@ -1,7 +1,7 @@
 // Главная витрины: поиск, фасеты, сортировка, состояние в URL, карточки.
-import MiniSearch from '../vendor/minisearch/index.js?v=mvf5v8f3';
-import { CatalogSearch, highlight, CATEGORY_LABELS, PLATFORM_LABELS } from './search.js?v=mvf5v8f3';
-import { termVariants } from './translit.js?v=mvf5v8f3';
+import MiniSearch from '../vendor/minisearch/index.js?v=mvf765ag';
+import { CatalogSearch, highlight, CATEGORY_LABELS, PLATFORM_LABELS } from './search.js?v=mvf765ag';
+import { termVariants } from './translit.js?v=mvf765ag';
 
 const $ = (s) => document.querySelector(s);
 const fmt = (n) => (n || 0).toLocaleString('ru-RU');
