@@ -1,0 +1,87 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Растение: перец чили (вар. A) — каталог моделей</title>
+<meta name="description" content="Plant chili pepper (Capsicum annuum), variant A from the Botaniq library. Real size 0.90 × 1.06 × 0.94 m, 24,700 triangles, parts by material: Bark, Bark2, Fruit, Leaf. Leaves and flowers use alpha cut-out in BaseColor.">
+<link rel="icon" href="data:,"><meta name="catalog-static" content="1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../app.css?v=mvf5v8f3">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script type="module">document.addEventListener('click',e=>{const b=e.target.closest('#themeBtn');if(!b)return;const cur=document.documentElement.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');const next=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}});</script>
+<script type="importmap">{"imports":{"three":"../vendor/three.module.js","three/addons/":"../vendor/addons/"}}</script>
+</head><body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="crumbs"><a href="../index.html">← Каталог моделей студии</a> · ботаника</div>
+      <h1>Растение: перец чили (вар. A) <span class="note">· Plant: chili pepper (var. A)</span></h1>
+    </div>
+    <div class="tb-row"><span id="authBox" class="tb-row"></span><span class="demo-tag">Plant_Capsicum-annuum_A</span><button class="tb" id="themeBtn" title="тёмная / светлая тема">◐</button></div>
+  </header>
+
+  <section class="stage" aria-label="Просмотр модели">
+    <div class="viewer">
+      <div class="toolbar" id="modes">
+        <button class="tb" data-mode="tex" aria-pressed="true" title="1">Текстуры</button>
+        <button class="tb" data-mode="wire" aria-pressed="false" title="2">Сетка</button>
+        <button class="tb" data-mode="base" aria-pressed="false" title="3">Базовый цвет</button>
+        <button class="tb" data-mode="normal" aria-pressed="false" title="4">Нормали</button>
+        <button class="tb" data-mode="rough" aria-pressed="false" title="5">Шероховатость</button>
+        <button class="tb" data-mode="metal" aria-pressed="false">Металл</button>
+        <button class="tb" data-mode="ao" aria-pressed="false">AO</button>
+        <button class="tb" data-mode="clay" aria-pressed="false" title="6">Без текстур</button>
+        <button class="tb" data-mode="uv" aria-pressed="false" title="7">UV-развёртка</button>
+        <span class="sp"></span>
+        <button class="tb" id="fitBtn" title="f">Автофокус</button>
+        <button class="tb" id="bgBtn" aria-pressed="false">Светлый фон</button>
+      </div>
+      <div class="canvas-wrap" id="cw">
+        <canvas id="gl" class="gl"></canvas>
+        <canvas id="uvCanvas" class="uv" hidden></canvas>
+        <div class="hud" id="hud"></div>
+        <div class="hint">вращение: мышь · зум: колесо · сдвиг: правая кнопка · клавиши 1–7, f</div>
+        <div class="loading" id="loading">загрузка GLB…</div>
+      </div>
+    </div>
+
+    <aside class="side">
+      <div class="panel">
+        <h3>Паспорт</h3>
+        <dl>
+          <dt>Треугольники</dt><dd>24 700</dd>
+          <dt>Вершины</dt><dd>16 106</dd>
+          <dt>В превью</dt><dd><span id="vTris">…</span> тр. / <span id="vVerts">…</span> в.</dd>
+          <dt>Габариты, м</dt><dd title="ширина × глубина × высота (Blender: X × Y × Z)">0.90 × 0.94 × 1.06</dd>
+          <dt>Объектов</dt><dd>4</dd>
+          <dt>UV-слои</dt><dd>1</dd>
+          <dt>Карты</dt><dd>BaseColor 128, Normal 128, BaseColor 512, Normal 512</dd>
+          <dt>Источник</dt><dd>polygoniq Botaniq, подготовка в Blender</dd>
+          <dt>Дата</dt><dd>2026-10-13</dd>
+        </dl>
+        <div class="tags"><a class="tag" href="../index.html?tag=%D1%80%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%B8%D0%B5">растение</a><a class="tag" href="../index.html?tag=%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D1%8C">зелень</a><a class="tag" href="../index.html?tag=%D0%B1%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D0%BA%D0%B0">ботаника</a><a class="tag" href="../index.html?tag=%D0%BF%D0%B5%D1%80%D0%B5%D1%86">перец</a><a class="tag" href="../index.html?tag=botaniq">botaniq</a><a class="tag" href="../index.html?tag=%D0%B0%D0%BB%D1%8C%D1%84%D0%B0">альфа</a><a class="tag" href="../index.html?q=plant">plant</a><a class="tag" href="../index.html?q=greenery">greenery</a><a class="tag" href="../index.html?q=botany">botany</a><a class="tag" href="../index.html?q=pepper">pepper</a><a class="tag" href="../index.html?q=botaniq">botaniq</a><a class="tag" href="../index.html?q=alpha">alpha</a></div>
+        
+      </div>
+
+      <div class="panel">
+        <h2>Текстуры</h2>
+        <div class="maps" id="maps"></div>
+        <div class="note">Карты берутся из превью-GLB (≤ 1K). Клик по карте показывает её на модели без освещения.</div>
+      </div>
+
+      <div class="panel">
+        <h2>Скачать пакет</h2>
+        <div class="dl" id="dl" data-model="Plant_Capsicum-annuum_A"><a class="btn" href="#" data-platform="depence" data-size="6683687" data-download="Plant_Capsicum-annuum_A">Depence · zip<small>6.4 МБ</small></a><a class="btn" href="#" data-platform="notch" data-size="5943795" data-download="Plant_Capsicum-annuum_A">Notch · zip<small>5.7 МБ</small></a><a class="btn" href="#" data-platform="td" data-size="4347872" data-download="Plant_Capsicum-annuum_A">TouchDesigner · zip<small>4.1 МБ</small></a></div>
+        <div class="auth-note" id="authNote">Доступно сотрудникам студии: нужен вход по коду из письма (почта из списка владельца).</div>
+        <details class="notes"><summary>Что внутри пакетов</summary><ul><li><b>Depence:</b> Depence 4: FBX binary 7.4, 1 ед. = 1 см (Scale Factor = 1 при импорте), нормали DirectX (Y−), карты степенью двойки. Из FBX Depence читает только базовый цвет — roughness/metallic/normal подключить вручную из textures/.</li><li><b>Notch:</b> Notch: FBX, Y вверх, −Z вперёд, метры, один UV-слой UVMap, без цвета вершин, нормали OpenGL (Y+). Metallic/Roughness из FBX не доезжают — задать в материале Notch по manifest.json.</li><li><b>TouchDesigner:</b> TouchDesigner: Y вверх, −Z вперёд, 1 ед. = 1 м, pivot внизу по центру, нормали OpenGL (Y+). FBX без пересчёта единиц (заголовок «см»): если модель в TD 100× больше/меньше — масштаб 0,01/100 на COMP или берите OBJ. Пакет взят из готового экспорта: Plant_Capsicum-annuum_A</li></ul></details>
+      </div>
+    </aside>
+  </section>
+
+  <section class="desc panel">
+    <h2>Описание</h2>
+    <p>Растение перец чили (Capsicum annuum), вариант A из библиотеки Botaniq. Реальный размер 0.90 × 1.06 × 0.94 м, 24 700 треугольников, части по материалам: кора, кора, плоды, листья. Листья и цветы с альфа-вырезом в BaseColor.</p>
+    <p class="en">Plant chili pepper (Capsicum annuum), variant A from the Botaniq library. Real size 0.90 × 1.06 × 0.94 m, 24,700 triangles, parts by material: Bark, Bark2, Fruit, Leaf. Leaves and flowers use alpha cut-out in BaseColor.</p>
+  </section>
+</div>
+<script id="model-data" type="application/json">{"glb":"../assets/Plant_Capsicum-annuum_A/preview.glb","id":"Plant_Capsicum-annuum_A"}</script>
+<script type="module" src="../js/auth.js?v=mvf5v8f3"></script>
+<script type="module" src="../js/model.js?v=mvf5v8f3"></script>
+</body></html>

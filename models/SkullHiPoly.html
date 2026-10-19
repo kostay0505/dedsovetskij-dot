@@ -1,0 +1,87 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Череп Gristhorpe (исходный скан, hi-poly) — каталог моделей</title>
+<meta name="description" content="Merged raw skull scan before retopology: 318K faces. Added through the PocketBase cabinet as an end-to-end check: upload → job → worker → Blender → site.">
+<link rel="icon" href="data:,"><meta name="catalog-static" content="1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../app.css?v=mvf5v8f3">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script type="module">document.addEventListener('click',e=>{const b=e.target.closest('#themeBtn');if(!b)return;const cur=document.documentElement.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');const next=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}});</script>
+<script type="importmap">{"imports":{"three":"../vendor/three.module.js","three/addons/":"../vendor/addons/"}}</script>
+</head><body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="crumbs"><a href="../index.html">← Каталог моделей студии</a> · скан</div>
+      <h1>Череп Gristhorpe (исходный скан, hi-poly) <span class="note">· Gristhorpe skull (raw scan, hi-poly)</span></h1>
+    </div>
+    <div class="tb-row"><span id="authBox" class="tb-row"></span><span class="demo-tag">SkullHiPoly</span><button class="tb" id="themeBtn" title="тёмная / светлая тема">◐</button></div>
+  </header>
+
+  <section class="stage" aria-label="Просмотр модели">
+    <div class="viewer">
+      <div class="toolbar" id="modes">
+        <button class="tb" data-mode="tex" aria-pressed="true" title="1">Текстуры</button>
+        <button class="tb" data-mode="wire" aria-pressed="false" title="2">Сетка</button>
+        <button class="tb" data-mode="base" aria-pressed="false" title="3">Базовый цвет</button>
+        <button class="tb" data-mode="normal" aria-pressed="false" title="4">Нормали</button>
+        <button class="tb" data-mode="rough" aria-pressed="false" title="5">Шероховатость</button>
+        <button class="tb" data-mode="metal" aria-pressed="false">Металл</button>
+        <button class="tb" data-mode="ao" aria-pressed="false">AO</button>
+        <button class="tb" data-mode="clay" aria-pressed="false" title="6">Без текстур</button>
+        <button class="tb" data-mode="uv" aria-pressed="false" title="7">UV-развёртка</button>
+        <span class="sp"></span>
+        <button class="tb" id="fitBtn" title="f">Автофокус</button>
+        <button class="tb" id="bgBtn" aria-pressed="false">Светлый фон</button>
+      </div>
+      <div class="canvas-wrap" id="cw">
+        <canvas id="gl" class="gl"></canvas>
+        <canvas id="uvCanvas" class="uv" hidden></canvas>
+        <div class="hud" id="hud"></div>
+        <div class="hint">вращение: мышь · зум: колесо · сдвиг: правая кнопка · клавиши 1–7, f</div>
+        <div class="loading" id="loading">загрузка GLB…</div>
+      </div>
+    </div>
+
+    <aside class="side">
+      <div class="panel">
+        <h3>Паспорт</h3>
+        <dl>
+          <dt>Треугольники</dt><dd>318 008</dd>
+          <dt>Вершины</dt><dd>159 236</dd>
+          <dt>В превью</dt><dd><span id="vTris">…</span> тр. / <span id="vVerts">…</span> в.</dd>
+          <dt>Габариты, м</dt><dd title="ширина × глубина × высота (Blender: X × Y × Z)">1.91 × 2.33 × 2.74</dd>
+          <dt>Объектов</dt><dd>1</dd>
+          <dt>UV-слои</dt><dd>1</dd>
+          <dt>Карты</dt><dd>BaseColor 1024</dd>
+          <dt>Источник</dt><dd>музейный скан, без облегчения</dd>
+          <dt>Дата</dt><dd>2026-10-18</dd>
+        </dl>
+        <div class="tags"><a class="tag" href="../index.html?tag=%D1%87%D0%B5%D1%80%D0%B5%D0%BF">череп</a><a class="tag" href="../index.html?tag=%D1%81%D0%BA%D0%B0%D0%BD">скан</a><a class="tag" href="../index.html?tag=hi-poly">hi-poly</a><a class="tag" href="../index.html?tag=%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA">исходник</a><a class="tag" href="../index.html?tag=%D0%BC%D1%83%D0%B7%D0%B5%D0%B9">музей</a><a class="tag" href="../index.html?q=skull">skull</a><a class="tag" href="../index.html?q=scan">scan</a><a class="tag" href="../index.html?q=hi-poly">hi-poly</a><a class="tag" href="../index.html?q=source">source</a><a class="tag" href="../index.html?q=museum">museum</a></div>
+        
+      </div>
+
+      <div class="panel">
+        <h2>Текстуры</h2>
+        <div class="maps" id="maps"></div>
+        <div class="note">Карты берутся из превью-GLB (≤ 1K). Клик по карте показывает её на модели без освещения.</div>
+      </div>
+
+      <div class="panel">
+        <h2>Скачать пакет</h2>
+        <div class="dl" id="dl" data-model="SkullHiPoly"><a class="btn" href="#" data-platform="depence" data-size="10070855" data-download="SkullHiPoly">Depence · zip<small>9.6 МБ</small></a><a class="btn" href="#" data-platform="notch" data-size="20177610" data-download="SkullHiPoly">Notch · zip<small>19.2 МБ</small></a><a class="btn" href="#" data-platform="td" data-size="18455617" data-download="SkullHiPoly">TouchDesigner · zip<small>17.6 МБ</small></a></div>
+        <div class="auth-note" id="authNote">Доступно сотрудникам студии: нужен вход по коду из письма (почта из списка владельца).</div>
+        <details class="notes"><summary>Что внутри пакетов</summary><ul><li><b>Depence:</b> Depence 4: FBX binary 7.4, 1 ед. = 1 см (Scale Factor = 1 при импорте), нормали DirectX (Y−), карты степенью двойки. Из FBX Depence читает только базовый цвет — roughness/metallic/normal подключить вручную из textures/.</li><li><b>Notch:</b> Notch: FBX, Y вверх, −Z вперёд, метры, один UV-слой UVMap, без цвета вершин, нормали OpenGL (Y+). Metallic/Roughness из FBX не доезжают — задать в материале Notch по manifest.json.</li><li><b>TouchDesigner:</b> TouchDesigner: Y вверх, −Z вперёд, 1 ед. = 1 м, pivot внизу по центру, нормали OpenGL (Y+). FBX без пересчёта единиц (заголовок «см»): если модель в TD 100× больше/меньше — масштаб 0,01/100 на COMP или берите OBJ. масштаб приведён к 1 м (×0.3655), pivot внизу по центру</li></ul></details>
+      </div>
+    </aside>
+  </section>
+
+  <section class="desc panel">
+    <h2>Описание</h2>
+    <p>Объединённый исходный скан черепа до ретопологии: 318 тыс. граней. Добавлен через кабинет на PocketBase как сквозная проверка: загрузка → задача → воркер → Blender → витрина.</p>
+    <p class="en">Merged raw skull scan before retopology: 318K faces. Added through the PocketBase cabinet as an end-to-end check: upload → job → worker → Blender → site.</p>
+  </section>
+</div>
+<script id="model-data" type="application/json">{"glb":"../assets/SkullHiPoly/preview.glb","id":"SkullHiPoly"}</script>
+<script type="module" src="../js/auth.js?v=mvf5v8f3"></script>
+<script type="module" src="../js/model.js?v=mvf5v8f3"></script>
+</body></html>
