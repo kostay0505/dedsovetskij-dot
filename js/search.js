@@ -1,6 +1,6 @@
 // Поисковый движок витрины: MiniSearch + операторы + синонимы + транслит + фасеты.
 // Без DOM — тот же код гоняется в Node для TESTLOG (scripts/search_test.mjs).
-import { termVariants, ru2lat, lat2ru } from './translit.js?v=mvf765ag';
+import { termVariants, ru2lat, lat2ru } from './translit.js?v=mvgmh7kp';
 
 export const SEARCH_FIELDS = ['id', 'name_ru', 'name_en', 'description_ru', 'description_en', 'tags', 'origin', 'category', 'tr'];
 export const BOOST = { id: 3, name_ru: 5, name_en: 5, tags: 3, category: 2, origin: 1, description_ru: 1, description_en: 1, tr: 2 };

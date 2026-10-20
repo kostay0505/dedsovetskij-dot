@@ -1,0 +1,69 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кабинет — каталог моделей</title>
+<link rel="icon" href="data:,"><meta name="pb-url" content="https://173-249-12-166.sslip.io">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../app.css?v=mvgmh7kp">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script type="importmap">{"imports":{"three":"../vendor/three.module.js","three/addons/":"../vendor/addons/"}}</script>
+<style>
+nav.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+nav.tabs a { text-decoration: none; }
+.table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table th, .table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.table th { color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; font-size: 11px; }
+.table tr:hover td { background: var(--panel-2); }
+.table img { width: 72px; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; background: var(--panel-2); display: block; }
+.table a.name { color: var(--fg); text-decoration: none; font-weight: 600; }
+.form { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+.form label { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
+.form label.wide, .form .wide { grid-column: 1 / -1; }
+.form input, .form textarea, .form select, input.in { font: 14px var(--font); color: var(--fg); background: var(--panel-2); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; width: 100%; }
+.form textarea { min-height: 70px; resize: vertical; }
+.form input:focus, .form textarea:focus, .form select:focus, input.in:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.drop { border: 2px dashed var(--line); border-radius: 8px; padding: 18px; text-align: center; color: var(--muted); cursor: pointer; display: grid; gap: 6px; }
+.drop.over { border-color: var(--accent); color: var(--fg); }
+.drop input { display: none; }
+.log { font: 12px/1.45 var(--mono); background: #0f1115; color: #cfd3dc; border-radius: 6px; padding: 10px 12px; max-height: 380px; overflow: auto; white-space: pre-wrap; border: 1px solid var(--line); }
+.log .warn { color: var(--warn); } .log .err { color: var(--bad); } .log .ok { color: var(--ok); }
+.status { font: 500 11px var(--mono); padding: 1px 6px; border-radius: 3px; border: 1px solid var(--line); }
+.status.published, .status.done { color: var(--ok); border-color: var(--ok); } .status.draft, .status.queued { color: var(--warn); border-color: var(--warn); } .status.failed { color: var(--bad); border-color: var(--bad); } .status.running { color: var(--wire); border-color: var(--wire); }
+.list-tex { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+.list-tex .map img { aspect-ratio: 1; object-fit: cover; }
+.chk { display: grid; gap: 4px; max-height: 260px; overflow: auto; font: 13px var(--mono); }
+.chk label { display: flex; gap: 8px; align-items: center; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.sum { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; }
+.sum .k { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.sum .v { font-family: var(--mono); font-size: 14px; }
+.toast { position: fixed; right: 16px; bottom: 16px; background: var(--panel); border: 1px solid var(--accent); border-radius: 6px; padding: 10px 14px; font-size: 13px; z-index: 9; }
+.detect { font: 12px var(--mono); display: grid; gap: 2px; }
+.detect .w { color: var(--warn); }
+.tag-sugg { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag-sugg button { font: 12px var(--font); color: var(--muted); background: var(--panel-2); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; cursor: pointer; }
+.tag-sugg button:hover { color: var(--accent); border-color: var(--accent); }
+.small { font-size: 12px; }
+.gate { display: grid; gap: 10px; justify-items: start; }
+</style>
+</head><body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Кабинет владельца</h1>
+      <div class="note" id="statusLine">раздел витрины /cabinet · вход по коду из письма, только для роли owner</div>
+    </div>
+    <nav class="tabs" id="tabs">
+      <a class="tb" href="#/models">Модели</a>
+      <a class="tb" href="#/new">Новая модель</a>
+      <a class="tb" href="#/textures">Текстуры</a>
+      <a class="tb" href="#/jobs">Задачи</a>
+      <a class="tb" href="#/users">Пользователи</a>
+      <a class="tb" href="../index.html" title="витрина">Витрина ↗</a>
+      <span id="authBox" class="tb-row"></span>
+      <button class="tb" id="themeBtn" title="тёмная / светлая тема">◐</button>
+    </nav>
+  </header>
+  <main id="view"></main>
+</div>
+<script type="module" src="../js/auth.js?v=mvgmh7kp"></script>
+<script type="module" src="js/app.js?v=mvgmh7kp"></script>
+</body></html>
